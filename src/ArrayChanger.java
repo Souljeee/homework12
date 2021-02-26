@@ -25,15 +25,17 @@ public class ArrayChanger {
         float[] a1 = new float[HALF];
         float[] a2 = new float[HALF];
 
-        for (int i = 0; i < SIZE-1; i++) {
+        for (int i = 0; i < SIZE; i++) {
             arr[i] = 1;
         }
+
+
 
 
         Thread thread1 = new Thread(new Runnable() {
             @Override
             public void run() {
-                for (int i = 0; i < HALF-1; i++) {
+                for (int i = 0; i < HALF; i++) {
                     a1[i] = (float)(arr[i] * Math.sin(0.2f + i / 5) * Math.cos(0.2f + i / 5) * Math.cos(0.4f + i / 2));
                 }
             }
@@ -42,7 +44,7 @@ public class ArrayChanger {
         Thread thread2 = new Thread(new Runnable() {
             @Override
             public void run() {
-                for (int i = 0; i < HALF-1; i++) {
+                for (int i = 0; i < HALF; i++) {
                     a2[i] = (float)(arr[i] * Math.sin(0.2f + i / 5) * Math.cos(0.2f + i / 5) * Math.cos(0.4f + i / 2));
                 }
             }
@@ -60,6 +62,8 @@ public class ArrayChanger {
         System.arraycopy(a2, 0, arr, HALF, HALF);
 
         System.out.println(System.currentTimeMillis() - a);
+
+
 
     }
 }
