@@ -53,7 +53,7 @@ public class ArrayChanger {
         long a = System.currentTimeMillis();
 
         System.arraycopy(arr, 0, a1, 0, HALF);
-        System.arraycopy(arr, HALF-1, a2, 0, HALF);
+        System.arraycopy(arr, HALF, a2, 0, HALF);
 
         thread1.start();
         thread2.start();
